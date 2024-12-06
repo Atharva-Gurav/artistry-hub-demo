@@ -1,19 +1,29 @@
-import Description from './Description';
+
 import Footer from './Footer';
-import logo from './logo.svg';
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Login';
 
 import "./Navbar"; 
 import Navbar from './Navbar';
-import Workshops from './Workshop';
+import Home from './Home';
+import FindArtist from './FindArtist';
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Description/>
-      <Workshops/>
+     <Router>
+     <Navbar /> {/* Include the Navbar here */}
+     <Routes>
+     <Route path="/" element={<Home />} />
+         <Route path="/login" element={<Login />} />
+         <Route path="/find-artist" element={<FindArtist />} />
+         {/* Add more routes as needed */}
+      </Routes>
+     
       <Footer/>
-    </div>
+ </Router>
   );
 }
 
