@@ -1,0 +1,57 @@
+.description-section {
+    display: flex; /* Use flexbox for layout */
+    margin: 20px; /* Margin around the section */
+}
+
+.carousel {
+    flex: 1; /* Allow carousel to take up space */
+    position: relative; /* Positioning for absolute children */
+    overflow: hidden; /* Hide overflow for images */
+}
+
+.carousel-images {
+    display: flex; /* Align images in a row */
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.carousel-images img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: none; /* Hide images by default */
+}
+
+.carousel-images img.active {
+    display: block; /* Show active image */
+}
+
+.description {
+    flex: 1; /* Allow description to take up space */
+    padding: 20px; /* Padding for description */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-left: 1px solid #ccc; /* Divider between carousel and description */
+}
+
+.description-heading {
+    font-size: 2.5rem; /* Large font size */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark color for text */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    position: relative; /* Position for pseudo-element */
+}
+
+.description-heading::after {
+    content: ''; /* Pseudo-element for underline */
+    display: block; /* Make it a block element */
+    width: 50%; /* Width of the underline */
+    height: 4px; /* Height of the underline */
+    background-color: #007bff; /* Color of the underline */
+    margin: 10px auto 0; /* Center the underline */
+    border-radius: 2px; /* Rounded edges */
+}
+
+.description p {
+    margin: 10px 0; /* Margin for paragraphs */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Slightly lighter color for text */
+}

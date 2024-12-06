@@ -1,0 +1,58 @@
+.workshops-section {
+    margin: 20px; /* Margin around the section */
+    text-align: center; /* Center text */
+}
+
+.workshops-heading {
+    font-size: 2rem; /* Font size for heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.carousel {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+.carousel-button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0 10px; /* Margin between buttons */
+}
+
+.carousel-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.carousel-content {
+    flex: 1; /* Allow content to take up space */
+    padding: 20px; /* Padding for content */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ccc; /* Border around content */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.event-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for image */
+}
+
+.event-title {
+    font-size: 1.5rem; /* Font size for event title */
+    margin: 10px 0; /* Margin for title */
+}
+
+.event-date {
+    font-size: 1rem; /* Font size for event date */
+    color: #777; /* Lighter color for date */
+}
+
+.event-description {
+    margin-top: 10px; /* Space above description */
+    line-height: 1.5; /* Improve readability */
+    color: #555; /* Slightly lighter color for text */
+}
