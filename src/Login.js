@@ -1,6 +1,6 @@
 // src/Login.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Login.css'; // Import the CSS file
 
 const Login = () => {
@@ -43,7 +43,8 @@ const Login = () => {
                 <button type="submit">Login</button>
             </form>
             <p>
-                Don't have an account? <a href="/register">Register here</a>
+                Don't have an account?{' '}
+                <Link to="/register">Register here</Link> {/* Use Link for navigation */}
             </p>
         </div>
     );

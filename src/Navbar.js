@@ -1,24 +1,25 @@
 import React from "react";
 import "./Navbar.css";
 import logo from './logo.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // Import NavLink instead of Link
 
 export default function Navbar() {
     return (
-        <div class="navbar">
+        <div className="navbar">
             <div className="logo">
                 <img src={logo} alt="Artistry-Hub Logo" />
             </div>
             <ul>
-                <li><Link to="/" className="active">Home</Link></li>
-                <li><Link to="/find-artist">Find Artist</Link></li>
-                <li><Link to="/blogs">Blogs</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/services">Services</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/login">Login</Link></li> {/* Use Link for navigation */}
+                {/* Use NavLink instead of Link */}
+                <li><NavLink to="/" exact activeClassName="active">Home</NavLink></li>
+                <li><NavLink to="/find-artist" activeClassName="active">Find Artist</NavLink></li>
+                <li><NavLink to="/blogs" activeClassName="active">Blogs</NavLink></li>
+                <li><NavLink to="/about" activeClassName="active">About</NavLink></li>
+                <li><NavLink to="/services" activeClassName="active">Services</NavLink></li>
+                <li><NavLink to="/contact" activeClassName="active">Contact</NavLink></li>
+                <li><NavLink to="/login" activeClassName="active">Login</NavLink></li> {/* Use NavLink for Login */}
             </ul>
-            <div class="search-container">
+            <div className="search-container">
                 <input type="text" placeholder="Search..." />
                 <button type="submit">Search</button>
             </div>

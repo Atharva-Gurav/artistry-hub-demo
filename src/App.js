@@ -9,6 +9,11 @@ import "./Navbar";
 import Navbar from './Navbar';
 import Home from './Home';
 import FindArtist from './FindArtist';
+import RegistrationForm from './RegistrationForm';
+import Services from './Services';
+import About from './About';
+import Blogs from './Blogs';
+import Contact from './Contact';
 
 
 function App() {
@@ -19,7 +24,12 @@ function App() {
      <Route path="/" element={<Home />} />
          <Route path="/login" element={<Login />} />
          <Route path="/find-artist" element={<FindArtist />} />
-         {/* Add more routes as needed */}
+         <Route path="/services" element={<Services />} />
+         <Route path="/register" element={<RegistrationForm />} />
+         <Route path="/about" element={<About />} />
+         <Route path="/blogs" element={<Blogs />} />
+         <Route path="/contact" element={<Contact />} />
+         
       </Routes>
      
       <Footer/>

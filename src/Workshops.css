@@ -1,58 +1,106 @@
+/* Workshops Section */
 .workshops-section {
-    margin: 20px; /* Margin around the section */
+    margin: 40px auto; /* Increased margin for spacing around the section */
     text-align: center; /* Center text */
+    max-width: 1200px; /* Limit the width of the section */
 }
 
+/* Heading */
 .workshops-heading {
-    font-size: 2rem; /* Font size for heading */
-    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2.5rem; /* Larger font size for the heading */
+    margin-bottom: 30px; /* Increased space below the heading */
+    color: #333; /* Darker color for heading */
+    font-weight: 600; /* Slightly bolder font for emphasis */
 }
 
+/* Carousel Layout */
 .carousel {
-    display: flex; /* Use flexbox for layout */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center content */
     align-items: center; /* Center items vertically */
+    gap: 20px; /* Gap between carousel items */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
+/* Carousel Buttons */
 .carousel-button {
     background-color: #007bff; /* Button color */
-    color: white; /* Text color */
+    color: white; /* White text color */
     border: none; /* No border */
-    padding: 10px 20px; /* Padding for buttons */
+    padding: 12px 24px; /* Increased padding for a better clickable area */
     cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    margin: 0 10px; /* Margin between buttons */
+    border-radius: 30px; /* Rounded edges for a modern look */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1rem; /* Slightly bigger font for readability */
 }
 
+/* Button Hover Effect */
 .carousel-button:hover {
     background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
+/* Carousel Content */
 .carousel-content {
-    flex: 1; /* Allow content to take up space */
-    padding: 20px; /* Padding for content */
-    background-color: #f9f9f9; /* Light background for contrast */
-    border: 1px solid #ccc; /* Border around content */
-    border-radius: 5px; /* Rounded corners */
+    flex: 1 1 300px; /* Ensure it takes up space but remains responsive */
+    max-width: 100%; /* Limit content width */
+    padding: 25px; /* Increased padding */
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 10px; /* Rounded corners for cleaner look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
+/* Carousel Content Hover Effect */
+.carousel-content:hover {
+    transform: translateY(-5px); /* Lift the content slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow for hover */
+}
+
+/* Event Image */
 .event-image {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for image */
+    width: 100%; /* Make the image responsive */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Crop images to fit the container without distortion */
+    border-radius: 10px; /* Rounded corners for a softer look */
 }
 
+/* Event Title */
 .event-title {
-    font-size: 1.5rem; /* Font size for event title */
-    margin: 10px 0; /* Margin for title */
+    font-size: 1.8rem; /* Larger font size for event title */
+    margin: 20px 0 10px; /* Spacing around the title */
+    font-weight: 500; /* Slightly bolder title */
+    color: #333; /* Dark text for the title */
 }
 
+/* Event Date */
 .event-date {
-    font-size: 1rem; /* Font size for event date */
-    color: #777; /* Lighter color for date */
+    font-size: 1.1rem; /* Slightly larger font size for date */
+    color: #777; /* Light color for the date */
+    margin-bottom: 15px; /* Space below date */
 }
 
+/* Event Description */
 .event-description {
-    margin-top: 10px; /* Space above description */
-    line-height: 1.5; /* Improve readability */
-    color: #555; /* Slightly lighter color for text */
+    font-size: 1rem; /* Set a uniform font size for descriptions */
+    margin-top: 15px; /* Space above description */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #555; /* Lighter text for description */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .carousel {
+        flex-direction: column; /* Stack carousel items vertically on smaller screens */
+        gap: 15px; /* Smaller gap */
+    }
+
+    .carousel-button {
+        padding: 10px 18px; /* Adjust button padding for smaller screens */
+    }
+
+    .carousel-content {
+        flex: 1 1 100%; /* Allow content to take full width on small screens */
+    }
 }
