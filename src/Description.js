@@ -33,15 +33,13 @@ const Description = () => {
             </div>
             <div className="description">
             <h2 className="description-heading">Grow with Great Design</h2>
-                <p>
-                    This is a brief description of the content related to the images on the left. 
-                    You can provide details about the images, the context, or any other relevant information 
-                    that enhances the viewer's understanding.
+            <p className="about-text">
+                    Welcome to <strong>Artistry Hub</strong>, we are passionate about helping businesses grow through exceptional design. Our team of creative professionals specializes in transforming ideas into visually compelling designs that resonate with your target audience.
                 </p>
-                <p>
-                    Additional information can be added here, such as background stories, features, or 
-                    any other interesting facts that might engage the audience.
+                <p className="about-text">
+                    In addition to empowering businesses, we are also committed to helping freelance artists grow. Artistry Hub serves as a platform where artists can showcase their unique talents, connect with potential clients, and build their creative businesses. Whether you're a designer, painter, photographer, or any other creative professional, we are here to support your journey toward success.
                 </p>
+                
             </div>
         </div>
     );

@@ -1,33 +1,86 @@
 /* src/FindArtist.css */
-.find-artist-container {
-    max-width: 800px; /* Set a max width for the container */
-    margin: 50px auto; /* Center the container */
+
+.artist-container {
+    padding: 40px;
+    background-color: #f9f9f9;
+    min-height: 100vh; /* Ensure the container takes full height */
+}
+
+.artist-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px; /* Increase gap for better spacing */
+    justify-items: center; /* Center items */
+}
+
+.artist-card {
+    border: 1px solid #e0e0e0;
     padding: 20px;
-    text-align: center; /* Center text */
+    border-radius: 12px; /* More rounded corners for a softer look */
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for elevation effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 350px; /* Limit card width */
+    margin: 0 auto;
 }
 
-h2 {
-    margin-bottom: 30px; /* Space below the heading */
+.artist-card:hover {
+    transform: translateY(-5px); /* Slight hover lift effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
 }
 
-.service-boxes {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-around; /* Space out the boxes */
-    flex-wrap: wrap; /* Allow wrapping of boxes */
+.artist-card img {
+    width: 120px; /* Fixed size for the image */
+    height: 120px;
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 15px;
 }
 
-.service-box {
-    background-color: #f4f4f4; /* Light background for boxes */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 20px; /* Padding inside boxes */
-    margin: 10px; /* Space around boxes */
-    flex: 1 1 200px; /* Flex properties for responsive design */
-    text-align: center; /* Center text inside boxes */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth background color transition */
+.artist-card h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333; /* Dark text for heading */
 }
 
-.service-box:hover {
-    background-color: #e0e0e0; /* Darker background on hover */
+.artist-card p {
+    font-size: 16px;
+    color: #777; /* Lighter text for description */
+    margin-bottom: 20px;
+    line-height: 1.6; /* Improve readability */
+}
+
+.artist-card button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.artist-card button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.artist-card button:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.artist-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.artist-heading span {
+    color: #007bff; /* Highlight part of the heading */
 }
