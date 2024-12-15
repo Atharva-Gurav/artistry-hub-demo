@@ -21,7 +21,7 @@ import ServiceArtists from './ServiceArtists';
 function App() {
   return (
      <Router>
-     <Navbar /> {/* Include the Navbar here */}
+     <Navbar /> 
      <Routes>
      <Route path="/" element={<Home />} />
          <Route path="/login" element={<Login />} />

@@ -2,7 +2,21 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ServiceArtists.css'; // Import the CSS file for styling
 
-// Mock data for services and artists
+// Mock Data for Artists
+const artistsData = [
+  { id: 1, name: 'Aditi Shah', skills: ['Bridal Mehendi', 'Mehendi Service'], location: 'Pune', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 2, name: 'Rajesh Kumar', skills: ['Modern Canvas Art', 'Canvas Painting'], location: 'Mumbai', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 3, name: 'Nina Patel', skills: ['T-Shirt Printing', 'Embroidery'], location: 'Mumbai', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 4, name: 'Sandeep Iyer', skills: ['Chocolate Making'], location: 'Pune', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 5, name: 'Priya Sharma', skills: ['Mehendi Service', 'Bridal Mehendi'], location: 'Delhi', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 6, name: 'Amit Singh', skills: ['Chocolate Making', 'Handmade Crafts'], location: 'Bangalore', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 7, name: 'Tanvi Desai', skills: ['Photography', 'Digital Art'], location: 'Hyderabad', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 8, name: 'Karan Verma', skills: ['Calligraphy', 'Design'], location: 'Chennai', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 9, name: 'Snehal Gupta', skills: ['Jewelry Design', 'Handmade Crafts'], location: 'Kolkata', profilePicture: 'https://via.placeholder.com/150' },
+  { id: 10, name: 'Ravi Joshi', skills: ['Digital Art', 'Illustration'], location: 'Surat', profilePicture: 'https://via.placeholder.com/150' },
+];
+
+// Services Data
 const servicesData = [
   { service_id: 1, service_name: 'Portrait Drawing' },
   { service_id: 2, service_name: 'Modern Canvas Art' },
@@ -16,19 +30,6 @@ const servicesData = [
   { service_id: 10, service_name: 'Handmade Crafts' },
 ];
 
-const artistsData = [
-  { id: 1, name: 'John Doe', services: [1, 7], location: 'Pune', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 2, name: 'Jane Smith', services: [2, 7], location: 'Mumbai', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 3, name: 'Alex Johnson', services: [3, 9], location: 'Delhi', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 4, name: 'Emma Brown', services: [4, 5], location: 'Bangalore', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 5, name: 'Liam Wilson', services: [5], location: 'Chennai', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 6, name: 'Olivia Taylor', services: [6], location: 'Hyderabad', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 7, name: 'Noah Davis', services: [7], location: 'Kolkata', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 8, name: 'Ava Thomas', services: [8], location: 'Pune', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 9, name: 'Mason Moore', services: [9], location: 'Jaipur', profilePicture: 'https://via.placeholder.com/150' },
-  { id: 10, name: 'Mia White', services: [10], location: 'Surat', profilePicture: 'https://via.placeholder.com/150' },
-];
-
 const ServiceArtists = () => {
   const { id } = useParams(); // Get service ID from URL params
   const serviceId = parseInt(id);
@@ -36,14 +37,21 @@ const ServiceArtists = () => {
   // Get the service name for the current serviceId
   const service = servicesData.find((service) => service.service_id === serviceId);
 
-  // Filter artists offering this service
+  // If service not found, return early
+  if (!service) {
+    return <p>Service not found</p>;
+  }
+
+  // Filter artists offering this service based on matching service name in their skills
   const filteredArtists = artistsData.filter((artist) =>
-    artist.services.includes(serviceId)
+    artist.skills.some((skill) => skill.toLowerCase() === service.service_name.toLowerCase())
   );
 
   return (
     <div className="artists-container">
-      <h1 className="artists-heading">{service ? `${service.service_name} - Artists` : 'Artists Offering This Service'}</h1>
+      <h1 className="artists-heading">
+        {service ? `${service.service_name} - Artists` : 'Artists Offering This Service'}
+      </h1>
       {filteredArtists.length > 0 ? (
         <div className="artists-list">
           {filteredArtists.map((artist) => (

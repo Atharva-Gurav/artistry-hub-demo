@@ -1,5 +1,5 @@
-// Services.js
-import React from 'react';
+// src/Services.js
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Services.css'; // For styling
 
@@ -19,16 +19,23 @@ const servicesData = [
 
 const Services = () => {
   const navigate = useNavigate();
+  const [services, setServices] = useState([]);
+
+  // Simulating an API call to fetch services data
+  useEffect(() => {
+    setServices(servicesData);
+  }, []);
 
   const handleServiceClick = (serviceId) => {
-    navigate(`/service/${serviceId}`); // Navigate to the service's artist list page
+    // Navigate to the ServiceArtists page with the specific serviceId
+    navigate(`/service/${serviceId}`);
   };
 
   return (
     <div className="services-container">
       <h1 className="services-heading">Our Services</h1>
       <div className="services-list">
-        {servicesData.map((service) => (
+        {services.map((service) => (
           <div
             key={service.service_id}
             className="service-card"
