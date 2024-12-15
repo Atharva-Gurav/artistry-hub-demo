@@ -1,106 +1,115 @@
 /* Workshops Section */
 .workshops-section {
-    margin: 40px auto; /* Increased margin for spacing around the section */
-    text-align: center; /* Center text */
-    max-width: 1200px; /* Limit the width of the section */
-}
-
-/* Heading */
-.workshops-heading {
-    font-size: 2.5rem; /* Larger font size for the heading */
-    margin-bottom: 30px; /* Increased space below the heading */
-    color: #333; /* Darker color for heading */
-    font-weight: 600; /* Slightly bolder font for emphasis */
-}
-
-/* Carousel Layout */
-.carousel {
-    display: flex; /* Flexbox for horizontal layout */
-    justify-content: center; /* Center content */
-    align-items: center; /* Center items vertically */
-    gap: 20px; /* Gap between carousel items */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-}
-
-/* Carousel Buttons */
-.carousel-button {
-    background-color: #007bff; /* Button color */
-    color: white; /* White text color */
-    border: none; /* No border */
-    padding: 12px 24px; /* Increased padding for a better clickable area */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 30px; /* Rounded edges for a modern look */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
-    font-size: 1rem; /* Slightly bigger font for readability */
-}
-
-/* Button Hover Effect */
-.carousel-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* Carousel Content */
-.carousel-content {
-    flex: 1 1 300px; /* Ensure it takes up space but remains responsive */
-    max-width: 100%; /* Limit content width */
-    padding: 25px; /* Increased padding */
-    background-color: #f9f9f9; /* Light background */
-    border: 1px solid #ddd; /* Lighter border */
-    border-radius: 10px; /* Rounded corners for cleaner look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Carousel Content Hover Effect */
-.carousel-content:hover {
-    transform: translateY(-5px); /* Lift the content slightly on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow for hover */
-}
-
-/* Event Image */
-.event-image {
-    width: 100%; /* Make the image responsive */
-    height: 200px; /* Fixed height for images */
-    object-fit: cover; /* Crop images to fit the container without distortion */
-    border-radius: 10px; /* Rounded corners for a softer look */
-}
-
-/* Event Title */
-.event-title {
-    font-size: 1.8rem; /* Larger font size for event title */
-    margin: 20px 0 10px; /* Spacing around the title */
-    font-weight: 500; /* Slightly bolder title */
-    color: #333; /* Dark text for the title */
-}
-
-/* Event Date */
-.event-date {
-    font-size: 1.1rem; /* Slightly larger font size for date */
-    color: #777; /* Light color for the date */
-    margin-bottom: 15px; /* Space below date */
-}
-
-/* Event Description */
-.event-description {
-    font-size: 1rem; /* Set a uniform font size for descriptions */
-    margin-top: 15px; /* Space above description */
-    line-height: 1.6; /* Improved line height for readability */
-    color: #555; /* Lighter text for description */
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+    padding: 40px;
+    background-color: #f8f9fa; /* Light gray background for a clean look */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading */
+  .workshops-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #343a40; /* Dark gray for text */
+    font-weight: bold;
+  }
+  
+  /* Carousel container */
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Button Styles */
+  .carousel-button {
+    background-color: #007bff; /* Professional blue color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .carousel-button:hover {
+    background-color: #0056b3; /* Darker blue for hover */
+  }
+  
+  /* Carousel Content */
+  .carousel-content {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Event Image */
+  .event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Event Title */
+  .event-title {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #343a40; /* Dark gray for title */
+    font-weight: bold;
+  }
+  
+  /* Event Date */
+  .event-date {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #6c757d; /* Medium gray for date */
+  }
+  
+  /* View Details Button */
+  .view-details-button {
+    background-color: #28a745; /* Fresh green for CTA button */
+    color: white;
+    padding: 10px 18px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .view-details-button:hover {
+    background-color: #218838; /* Darker green for hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
     .carousel {
-        flex-direction: column; /* Stack carousel items vertically on smaller screens */
-        gap: 15px; /* Smaller gap */
+      flex-direction: column;
+      gap: 20px;
     }
-
+  
     .carousel-button {
-        padding: 10px 18px; /* Adjust button padding for smaller screens */
+      padding: 10px 20px;
+      font-size: 0.9rem;
     }
-
-    .carousel-content {
-        flex: 1 1 100%; /* Allow content to take full width on small screens */
+  
+    .view-details-button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
     }
-}
+  }
+  
