@@ -14,12 +14,14 @@ import Services from './Services';
 import About from './About';
 import Blogs from './Blogs';
 import Contact from './Contact';
+import Portfolio from './Portfolio';
+import ServiceArtists from './ServiceArtists';
 
 
 function App() {
   return (
      <Router>
-     <Navbar /> {/* Include the Navbar here */}
+     <Navbar /> 
      <Routes>
      <Route path="/" element={<Home />} />
          <Route path="/login" element={<Login />} />
@@ -29,7 +31,8 @@ function App() {
          <Route path="/about" element={<About />} />
          <Route path="/blogs" element={<Blogs />} />
          <Route path="/contact" element={<Contact />} />
-         
+         <Route path="/portfolio/:id" element={<Portfolio />} />
+         <Route path="/service/:id" element={<ServiceArtists />} />
       </Routes>
      
       <Footer/>

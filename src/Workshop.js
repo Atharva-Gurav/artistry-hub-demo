@@ -1,52 +1,55 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Workshops.css'; // Import the CSS file for styles
 
 const Workshops = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const events = [
-        {
-            title: 'Web Development Bootcamp',
-            date: 'March 15, 2024',
-            description: 'Join us for an intensive bootcamp on web development covering HTML, CSS, and JavaScript.',
-            image: 'event1.jpg', // Replace with your image paths
-        },
-        {
-            title: 'Graphic Design Workshop',
-            date: 'April 10, 2024',
-            description: 'Learn the fundamentals of graphic design and create stunning visuals.',
-            image: 'event2.jpg',
-        },
-        {
-            title: 'Digital Marketing Seminar',
-            date: 'May 5, 2024',
-            description: 'Explore the latest trends in digital marketing and how to leverage them for your business.',
-            image: 'event3.jpg',
-        },
-    ];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    const nextEvent = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
-    };
+  // Updated event data with details from the table
+  const events = [
+    { event_id: 1, artist_id: 1, event_name: 'Portrait Workshop', date: '2024-06-20', image: 'https://via.placeholder.com/400x300/FF6347/FFFFFF?text=Portrait+Workshop' },
+    { event_id: 2, artist_id: 2, event_name: 'Canvas Expo', date: '2024-06-22', image: 'https://via.placeholder.com/400x300/ADD8E6/FFFFFF?text=Canvas+Expo' },
+    { event_id: 3, artist_id: 3, event_name: 'Bridal Mehendi Fair', date: '2024-06-23', image: 'https://via.placeholder.com/400x300/FFB6C1/FFFFFF?text=Bridal+Mehendi+Fair' },
+    { event_id: 4, artist_id: 4, event_name: 'T-Shirt Showcase', date: '2024-06-25', image: 'https://via.placeholder.com/400x300/98FB98/FFFFFF?text=T-Shirt+Showcase' },
+    { event_id: 5, artist_id: 5, event_name: 'Embroidery Fest', date: '2024-06-26', image: 'https://via.placeholder.com/400x300/FFE4E1/FFFFFF?text=Embroidery+Fest' },
+    { event_id: 6, artist_id: 6, event_name: 'Chocolate Fest', date: '2024-06-28', image: 'https://via.placeholder.com/400x300/FFD700/FFFFFF?text=Chocolate+Fest' },
+    { event_id: 7, artist_id: 7, event_name: 'Painting Workshop', date: '2024-06-29', image: 'https://via.placeholder.com/400x300/FF6347/FFFFFF?text=Painting+Workshop' },
+    { event_id: 8, artist_id: 8, event_name: 'Digital Art Fair', date: '2024-06-30', image: 'https://via.placeholder.com/400x300/8A2BE2/FFFFFF?text=Digital+Art+Fair' },
+    { event_id: 9, artist_id: 9, event_name: 'Mehendi Exhibition', date: '2024-07-01', image: 'https://via.placeholder.com/400x300/F0E68C/FFFFFF?text=Mehendi+Exhibition' },
+    { event_id: 10, artist_id: 10, event_name: 'Craft Expo', date: '2024-07-02', image: 'https://via.placeholder.com/400x300/FAEBD7/FFFFFF?text=Craft+Expo' },
+  ];
 
-    const prevEvent = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + events.length) % events.length);
-    };
+  const nextEvent = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
+  };
 
-    return (
-        <div className="workshops-section">
-            <h2 className="workshops-heading">Upcoming and Ongoing Workshops</h2>
-            <div className="carousel">
-                <button className="carousel-button" onClick={prevEvent}>Previous</button>
-                <div className="carousel-content">
-                    <img src={events[currentIndex].image} alt={events[currentIndex].title} className="event-image" />
-                    <h3 className="event-title">{events[currentIndex].title}</h3>
-                    <p className="event-date">{events[currentIndex].date}</p>
-                    <p className="event-description">{events[currentIndex].description}</p>
-                </div>
-                <button className="carousel-button" onClick={nextEvent}>Next</button>
-            </div>
+  const prevEvent = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + events.length) % events.length);
+  };
+
+  return (
+    <div className="workshops-section">
+      <h2 className="workshops-heading">Upcoming and Ongoing Workshops</h2>
+      <div className="carousel">
+        <button className="carousel-button" onClick={prevEvent}>Previous</button>
+        
+        <div className="carousel-content">
+          <img 
+            src={events[currentIndex].image} 
+            alt={events[currentIndex].event_name} 
+            className="event-image" 
+          />
+          <h3 className="event-title">{events[currentIndex].event_name}</h3>
+          <p className="event-date">{events[currentIndex].date}</p>
+          <Link to={`/event-details/${events[currentIndex].event_id}`}>
+            <button className="view-details-button">View Details</button>
+          </Link>
         </div>
-    );
+        
+        <button className="carousel-button" onClick={nextEvent}>Next</button>
+      </div>
+    </div>
+  );
 };
 
 export default Workshops;

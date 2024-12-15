@@ -1,0 +1,45 @@
+.portfolio-container {
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .portfolio-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .portfolio-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .portfolio-details h2 {
+    margin: 10px 0;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .portfolio-gallery-heading {
+    margin: 20px 0;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .portfolio-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
