@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import './FindArtist.css'; // For styling
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const FindArtist = () => {
   const [artists, setArtists] = useState([]);
@@ -89,6 +91,8 @@ const FindArtist = () => {
   };
 
   return (
+    <>
+   
     <div className="artist-container">
       <h2 className="artist-heading">
         Find <span>Artists</span>
@@ -107,6 +111,8 @@ const FindArtist = () => {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

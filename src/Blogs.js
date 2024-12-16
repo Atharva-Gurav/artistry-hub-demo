@@ -1,8 +1,11 @@
 import React from 'react';
 import './Blogs.css'; // Import the CSS file for styling
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const Blogs = () => {
   return (
+    <>
     <div className="blogs-container">
       <h1 className="blogs-heading">Latest Blogs</h1>
       <div className="blogs-list">
@@ -43,6 +46,8 @@ const Blogs = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

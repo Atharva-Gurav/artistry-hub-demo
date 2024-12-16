@@ -1,7 +1,7 @@
 
 import Footer from './Footer';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 
@@ -16,15 +16,25 @@ import Blogs from './Blogs';
 import Contact from './Contact';
 import Portfolio from './Portfolio';
 import ServiceArtists from './ServiceArtists';
+import UserDashboard from './UserDashboard';
+import ArtistDashboard from './ArtistDashboard';
+import AdminDashboard from './AdminDashboard';
 
 
 function App() {
+  const [role, setRole] = useState(localStorage.getItem('userRole')); // Get role from localStorage initially
+
+  const handleLogout = () => {
+    localStorage.removeItem('userRole'); // Remove role from localStorage
+    setRole(null); // Clear role from state
+  };
+
   return (
      <Router>
-     <Navbar /> {/* Include the Navbar here */}
+     <Navbar role={role} onLogout={handleLogout} />
      <Routes>
      <Route path="/" element={<Home />} />
-         <Route path="/login" element={<Login />} />
+         <Route path="/login" element={<Login setRole={setRole} />} />
          <Route path="/find-artist" element={<FindArtist />} />
          <Route path="/services" element={<Services />} />
          <Route path="/register" element={<RegistrationForm />} />
@@ -33,9 +43,12 @@ function App() {
          <Route path="/contact" element={<Contact />} />
          <Route path="/portfolio/:id" element={<Portfolio />} />
          <Route path="/service/:id" element={<ServiceArtists />} />
+         <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/artist-dashboard" element={<ArtistDashboard />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
      
-      <Footer/>
+      
  </Router>
   );
 }

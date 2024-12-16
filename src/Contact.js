@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css'; // Import the CSS file for styling
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +29,8 @@ const Contact = () => {
   };
 
   return (
+    <>
+    
     <div className="contact-container">
       <h1 className="contact-heading">Contact Us</h1>
       <div className="contact-info">
@@ -81,6 +85,8 @@ const Contact = () => {
         {isSubmitted && <p className="success-message">Your message has been sent successfully!</p>}
       </form>
     </div>
+    <Footer/>
+    </>
   );
 };
 

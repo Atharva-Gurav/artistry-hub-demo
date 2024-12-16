@@ -1,9 +1,13 @@
 // src/About.js
 import React from 'react';
 import './About.css';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const About = () => {
     return (
+        <>
+        
         <div className="about-container">
             <h1 className="about-heading">About Us</h1>
             <div className="about-content">
@@ -31,6 +35,8 @@ const About = () => {
                 </p>
             </div>
         </div>
+        <Footer/>
+        </>
     );
 };
 

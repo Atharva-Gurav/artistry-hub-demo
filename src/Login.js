@@ -1,52 +1,76 @@
-// src/Login.js
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import './Login.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Import CSS for styling
+import Footer from './Footer';
 
-const Login = () => {
+const Login = ({ setRole }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
+    // Dummy user data for login verification
+    const dummyUsers = [
+        { role: 'user', email: 'user@example.com', password: 'user123' },
+        { role: 'artist', email: 'artist@example.com', password: 'artist123' },
+        { role: 'admin', email: 'admin@example.com', password: 'admin123' }
+    ];
+
+    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle login logic here
-        console.log('Email:', email);
-        console.log('Password:', password);
-        
-        // Navigate to another route after login
-        navigate('/login'); // Change this to the route you want to navigate to
+
+        // Check for matching user credentials
+        const user = dummyUsers.find((u) => u.email === email && u.password === password);
+
+        if (user) {
+            setRole(user.role); // Set the role state from parent
+            // Navigate based on the role
+            navigate(
+                user.role === 'admin' ? '/admin-dashboard' :
+                user.role === 'artist' ? '/artist-dashboard' :
+                '/user-dashboard'
+            );
+        } else {
+            alert('Invalid credentials. Please try again!');
+        }
     };
 
     return (
+        <>
         <div className="login-container">
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Login</button>
-            </form>
-            <p>
-                Don't have an account?{' '}
-                <Link to="/register">Register here</Link> {/* Use Link for navigation */}
-            </p>
+            <div className="login-box">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="input-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            placeholder="Enter your email"
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            placeholder="Enter your password"
+                        />
+                    </div>
+                    <button type="submit" className="login-btn">Login</button>
+                </form>
+                <p className="register-link">
+                    Don't have an account? <a href="/register">Register here</a>
+                </p>
+            </div>
         </div>
+        <Footer/>
+        </>
+        
     );
 };
 

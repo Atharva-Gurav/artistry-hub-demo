@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Portfolio.css';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const Portfolio = () => {
   const { id } = useParams(); // Retrieve artist ID from URL
@@ -137,6 +139,8 @@ const Portfolio = () => {
   }
 
   return (
+    <>
+    
     <div className="portfolio-container">
       <div className="portfolio-header">
         <img src={artist.profilePicture} alt={artist.name} />
@@ -154,6 +158,8 @@ const Portfolio = () => {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

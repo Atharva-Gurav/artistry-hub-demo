@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ServiceArtists.css'; // Import the CSS file for styling
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 // Mock data for services and artists
 const servicesData = [
@@ -42,6 +44,8 @@ const ServiceArtists = () => {
   );
 
   return (
+    <>
+   
     <div className="artists-container">
       <h1 className="artists-heading">{service ? `${service.service_name} - Artists` : 'Artists Offering This Service'}</h1>
       {filteredArtists.length > 0 ? (
@@ -65,6 +69,8 @@ const ServiceArtists = () => {
         <p>No artists found for this service.</p>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 

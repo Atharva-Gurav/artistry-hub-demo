@@ -2,6 +2,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Services.css'; // For styling
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 // Services Data
 const servicesData = [
@@ -25,6 +27,8 @@ const Services = () => {
   };
 
   return (
+    <>
+   
     <div className="services-container">
       <h1 className="services-heading">Our Services</h1>
       <div className="services-list">
@@ -47,6 +51,8 @@ const Services = () => {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
