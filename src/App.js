@@ -19,6 +19,8 @@ import ServiceArtists from './ServiceArtists';
 import UserDashboard from './UserDashboard';
 import ArtistDashboard from './ArtistDashboard';
 import AdminDashboard from './AdminDashboard';
+import Chat from './Chat';
+import WorkshopDetails from './WorkshopDetails';
 
 
 function App() {
@@ -46,6 +48,8 @@ function App() {
          <Route path="/user-dashboard" element={<UserDashboard />} />
         <Route path="/artist-dashboard" element={<ArtistDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/chat/:id" element={<Chat />} />
+        <Route path="/workshop-details/:event_id" element={<WorkshopDetails />} />
       </Routes>
      
       
